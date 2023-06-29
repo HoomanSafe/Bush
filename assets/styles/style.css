@@ -1,0 +1,255 @@
+/*===== GOOGLE FONTS =====*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css");
+/*===== VARIABLES CSS =====*/
+:root {
+  --header-height: 3rem;
+  --font-semi: 600;
+  /*===== Colores =====*/
+  --first-color: #c6ab7c;
+  --body-bg: #dcdcdc;
+  /*===== Fuente y tipografia =====*/
+  --body-font: "Inter", sans-serif;
+  --big-font-size: 2rem;
+  --h2-font-size: 1.25rem;
+  --normal-font-size: 0.938rem;
+  --smaller-font-size: 0.75rem;
+  --white: #fff;
+  /*===== Margenes =====*/
+  --mb-2: 1rem;
+  --mb-4: 2rem;
+  --mb-5: 2.5rem;
+  --mb-6: 3rem;
+  /*===== z index =====*/
+  --z-back: -10;
+  --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+  :root {
+    --big-font-size: 3.5rem;
+    --h2-font-size: 2rem;
+    --normal-font-size: 1rem;
+    --smaller-font-size: 0.875rem;
+  }
+}
+/*===== BASE =====*/
+*,
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  color: #303030;
+  background: var(--body-bg);
+  color: var(--white);
+  position: relative;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/*===== CLASS CSS ===== */
+button.nav-toggle {
+  background: #825c51;
+  border: 1px solid #ffffff;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #000;
+}
+button.nav-toggle i {
+  font-size: 32px;
+  color: white;
+}
+button.nav-toggle .close {
+  display: none;
+}
+
+button.nav-toggle.open .open {
+  display: none;
+}
+button.nav-toggle.open .close {
+  display: block;
+}
+
+div.header.open {
+  left: 0px !important;
+}
+
+div.header {
+  height: 100vh;
+  width: 90px;
+  background: #dcdcdc;
+  position: fixed;
+  left: 0px;
+  z-index: 100;
+  border-right: 1px solid #ccd6f6;
+  padding-block: 50px;
+  transition: 0.3s linear;
+}
+@media (max-width: 700px) {
+  div.header {
+    left: -100px;
+  }
+}
+div.header .inner {
+  height: 100vh;
+  width: 100%;
+  padding: 10px 10px 100px 10px;
+}
+div.header .inner a i {
+  font-size: 34px;
+  color: #825c51;
+  transition: all 0.3s linear;
+}
+div.header .inner a i:hover {
+  color: var(--first-color);
+}
+
+.d-none {
+  display: none !important;
+}
+
+#loader {
+  min-height: 100vh;
+  width: 100%;
+  background-color: var(--body-bg);
+  position: fixed;
+  z-index: 200;
+}
+#loader img {
+  transition: opacity 0.3s ease-out;
+}
+
+.load img {
+  pointer-events: none;
+  opacity: 0;
+}
+
+#hero {
+  width: 100%;
+  padding-block: 100px;
+}
+@media (min-width: 1000px) {
+  #hero {
+    padding-inline: 100px !important;
+  }
+}
+#hero h2.head {
+  font-family: "Noticia", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 38px;
+  /* identical to box height */
+  letter-spacing: 0.02em;
+  color: #c6ab7c;
+}
+@media (max-width: 700px) {
+  #hero h2.head {
+    font-size: 32px;
+    line-height: 30px;
+  }
+}
+#hero h1.title {
+  font-family: "Noticia", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 128px;
+  line-height: 122px;
+  color: #000;
+}
+@media (max-width: 700px) {
+  #hero h1.title {
+    font-size: 84px;
+    line-height: 80px;
+  }
+}
+#hero p.info {
+  font-size: 16px;
+  line-height: 32px;
+  color: #825c51;
+  opacity: 0.8;
+}
+#hero a.button {
+  padding: 16px 32px;
+  background: transparent;
+  border: 2px solid #303030;
+  border-radius: 4px;
+  width: -moz-max-content;
+  width: max-content;
+  font-family: "Noticia";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 140%;
+  letter-spacing: 0.02em;
+  color: #303030;
+}
+
+#about {
+  width: 100%;
+  padding-block: 50px;
+}
+#about button.head {
+  padding: 12px 24px;
+  outline: none;
+  background: #101010;
+  border: 1px solid #ffffff;
+  color: var(--white);
+  font-family: "Noticia", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 32px;
+  letter-spacing: 0.02em;
+  width: -moz-max-content;
+  width: max-content;
+}
+#about p {
+  font-size: 20px;
+  line-height: 32px;
+  color: #825c51;
+}
+@media (max-width: 700px) {
+  #about p {
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+#about p.special {
+  color: var(--first-color);
+}
+#about p:last-child {
+  color: #825c51;
+}/*# sourceMappingURL=style.css.map */
